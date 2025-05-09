@@ -1,7 +1,6 @@
 # Warriors Showdown
 
-## Watch the demo video 
-(https://drive.google.com/file/d/15CuHf-hprKG7_aIvWdqDNnAvCiFVngnL/view?usp=drive_link)](https://drive.google.com/file/d/1Ga5eI_i8OSUZIn3kXFGB6MENsiYLKV0i/view?usp=drive_link)
+[![Watch the demo video](https://drive.google.com/file/d/15CuHf-hprKG7_aIvWdqDNnAvCiFVngnL/view?usp=drive_link)](https://drive.google.com/file/d/1Ga5eI_i8OSUZIn3kXFGB6MENsiYLKV0i/view?usp=drive_link)
 
 ## Description
 
