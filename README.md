@@ -96,4 +96,4 @@ The game expects this directory structure to load assets correctly.
 
 ---
 
-*This README was generated based on the game's state as of the last update.*
+
