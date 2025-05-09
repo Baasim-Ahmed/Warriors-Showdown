@@ -2,7 +2,7 @@
 
 ## Description
 
-Switch Strike Showdown is a 2D fighting game built with Pygame where two players can battle it out, each controlling a team of two distinct characters. Players can strategically switch between their characters during combat, adding a unique layer of depth to the classic fighting game formula.
+Warriors Showdown is a 2D fighting game built with Pygame where two players can battle it out, each controlling a team of two distinct characters. Players can strategically switch between their characters during combat, adding a unique layer of depth to the classic fighting game formula.
 
 ## Features
 
