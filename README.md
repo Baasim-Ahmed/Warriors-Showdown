@@ -1,5 +1,8 @@
 # Warriors Showdown
 
+## Watch the demo video 
+(https://drive.google.com/file/d/15CuHf-hprKG7_aIvWdqDNnAvCiFVngnL/view?usp=drive_link)](https://drive.google.com/file/d/1Ga5eI_i8OSUZIn3kXFGB6MENsiYLKV0i/view?usp=drive_link)
+
 ## Description
 
 A 2D fighting game built with Pygame, featuring multiple characters per player and character switching mechanics. This project serves as a foundation for developing AI agents to play fighting games, with an initial implementation for human vs. human local multiplayer and a placeholder for human vs. AI mode.
