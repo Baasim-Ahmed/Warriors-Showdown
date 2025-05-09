@@ -1,99 +1,85 @@
 # Warriors Showdown
 
+[![Watch the demo video](https://drive.google.com/file/d/15CuHf-hprKG7_aIvWdqDNnAvCiFVngnL/view?usp=drive_link)](https://drive.google.com/file/d/1Ga5eI_i8OSUZIn3kXFGB6MENsiYLKV0i/view?usp=drive_link)
+
 ## Description
 
-Switch Strike Showdown is a 2D fighting game built with Pygame where two players can battle it out, each controlling a team of two distinct characters. Players can strategically switch between their characters during combat, adding a unique layer of depth to the classic fighting game formula.
+A 2D fighting game built with Pygame, featuring multiple characters per player and character switching mechanics. This project serves as a foundation for developing AI agents to play fighting games, with an initial implementation for human vs. human local multiplayer and a placeholder for human vs. AI mode.
 
 ## Features
 
-* **Two-Player Local Multiplayer:** Battle against a friend on the same machine.
-* **Dual Character Teams:** Each player selects and can switch between two unique fighters (currently Warrior and Wizard).
-* **Character Switching Mechanic:**
-    * Players can switch their active fighter during the match.
-    * A cooldown period prevents spamming the switch ability.
-    * Visual cooldown timer and status ("Ready", "KO") displayed on screen.
-* **Automatic Switching:** If an active fighter is defeated, the game automatically switches to the player's benched character if available.
-* **Health Bars:** Clear display of active and benched character health.
-* **Round-Based Gameplay:** Win rounds by defeating both of your opponent's characters.
-* **Score Tracking:** Keeps track of rounds won by each player.
-* **Sound Effects & Music:** Basic audio for attacks and background music.
-* **Animated Sprites:** Characters have animations for idle, run, jump, attack, hit, and death.
+* **Core Fighting Mechanics:** Basic movement (run, jump), attacks, health bars, and collision detection.
+* **Multi-Character Teams:** Each player has a team of multiple fighters.
+* **Character Switching:** Players can switch between their active and benched fighters during gameplay (subject to a cooldown).
+* **Home Menu:** Start screen with options for Single Player, Multiplayer, and Quit.
+* **Single Player Mode:** Human player vs. an AI opponent (currently uses a basic placeholder AI logic - needs training).
+* **Multiplayer Mode:** Local human player vs. human player on the same keyboard using different control sets.
+* **Return to Menu:** Pressing the Escape key during gameplay returns to the main menu.
+* **Round System:** Tracks scores and resets fighters after a round ends until a match win condition is met (currently hardcoded to 2 rounds).
 
 ## Requirements
 
 * Python 3.x
-* Pygame library
+* Pygame library (`pip install pygame`)
+* Game assets (images, fonts, audio) in the specified `assets` directory structure. Ensure you have the following:
+    * `assets/audio/music.mp3`
+    * `assets/audio/sword.wav`
+    * `assets/audio/magic.wav`
+    * `assets/fonts/turok.ttf`
+    * `assets/images/background/background.jpg`
+    * `assets/images/icons/victory.png`
+    * `assets/images/warrior/Sprites/warrior.png`
+    * `assets/images/wizard/Sprites/wizard.png`
 
-## Installation
+## How to Run
 
-1.  **Clone the repository (or download the files):**
-    ```bash
-    git clone <your-repository-link>
-    cd <repository-folder-name>
-    ```
-2.  **Install Pygame:**
-    If you don't have Pygame installed, you can install it using pip:
-    ```bash
-    pip install pygame
-    ```
-
-## How to Play
-
-1.  Navigate to the directory where you saved the game files.
-2.  Run the main game file:
-    ```bash
-    python main.py
-    ```
+1.  Ensure you have Python and Pygame installed.
+2.  Place the `main.py` and `fighter.py` files, along with the `assets` folder containing the required files, in the same directory.
+3.  Open a terminal or command prompt in that directory.
+4.  Run the command: `python main.py`
 
 ## Controls
 
-### Player 1:
-* **Move Left:** A
-* **Move Right:** D
-* **Jump:** W
-* **Attack 1:** R
-* **Attack 2:** T
-* **Switch Character:** Q
+Controls are active during Single Player and Multiplayer game modes when the intro countdown finishes.
 
-### Player 2:
-* **Move Left:** Left Arrow Key
-* **Move Right:** Right Arrow Key
-* **Jump:** Up Arrow Key
-* **Attack 1:** Numpad 1
-* **Attack 2:** Numpad 2
-* **Switch Character:** Numpad 0
+### Player 1
 
-## Game Logic
+* **Move Left:** `A` key
+* **Move Right:** `D` key
+* **Jump:** `W` key
+* **Attack 1:** `R` key
+* **Attack 2:** `T` key
+* **Switch Character:** `Q` key
+* **Return to Menu:** `Escape` key (during gameplay)
 
-* The game starts with an intro countdown.
-* Each player controls their active fighter.
-* Reduce your opponent's active fighter's health to zero to KO them.
-* If a fighter is KO'd and the player has a benched character, the game will auto-switch.
-* Players can manually switch characters if their benched character is alive and the switch cooldown has elapsed.
-* A player wins the round when both of their opponent's characters are KO'd.
-* The game keeps track of round scores.
+### Player 2 (Local Multiplayer)
 
-## Assets
+* **Move Left:** `Left Arrow` key
+* **Move Right:** `Right Arrow` key
+* **Jump:** `Up Arrow` key
+* **Attack 1:** `Numpad 1` key
+* **Attack 2:** `Numpad 2` key
+* **Switch Character:** `Numpad 0` key
+* **Return to Menu:** `Escape` key (during gameplay)
 
-All game assets (images, sounds, fonts) are located in the `assets/` directory, categorized into:
-* `assets/audio/`
-* `assets/images/background/`
-* `assets/images/icons/`
-* `assets/images/warrior/Sprites/`
-* `assets/images/wizard/Sprites/`
-* `assets/fonts/`
+## Project Structure
 
-The game expects this directory structure to load assets correctly.
+* `main.py`: Contains the main game loop, state management (menu, single player, multiplayer), input handling, drawing logic, and game variable management. Includes a placeholder `get_ai_action` function for the AI opponent.
+* `fighter.py`: Defines the `Fighter` class, handling character-specific properties, animations, movement, attack logic, and health.
+* `assets/`: Directory containing subfolders for audio, fonts, and images.
 
-## Future Enhancements (Ideas)
+## Future Enhancements
 
-* More characters with unique abilities.
-* Character selection screen.
-* Different stages/arenas.
-* More complex attack combos.
-* AI for single-player mode.
-* Improved UI and visual effects.
+* **Train the AI:** Replace the basic placeholder logic in `get_ai_action` with a trained AI model (e.g., using Reinforcement Learning) to create a more challenging single-player opponent.
+* **More Characters:** Add more fighter classes and integrate them into the character selection and switching system.
+* **Special Moves:** Implement unique special moves for each character.
+* **Improved Animations and Effects:** Enhance visual feedback for hits, attacks, and switches.
+* **Sound Effects:** Add more distinct sound effects for different actions.
+* **UI Improvements:** Add character selection screens, win/loss screens, pause menu, etc.
+* **Network Multiplayer:** (Advanced) Implement online play using networking concepts and libraries.
+
+## AI Development Focus
+
+The current structure allows for the integration of an AI agent that can control Player 2 in Single Player mode. The `get_ai_action` function is the entry point where your AI's decision-making logic would reside. Developing a strong AI for a fighting game, especially with character switching, is the primary AI challenge this project is designed to explore, likely requiring techniques such as Reinforcement Learning.
 
 ---
-
-*This README was generated based on the game's state as of the last update.*
